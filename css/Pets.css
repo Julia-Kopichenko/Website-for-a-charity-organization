@@ -1,0 +1,468 @@
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/gilroy-regular.woff2') format('woff2'),
+		 url('../fonts/Gilroy-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/gilroy-bold.woff2') format('woff2'),
+		 url('../fonts/Gilroy-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/gilroy-Semibold.woff2') format('woff2'),
+		 url('../fonts/Gilroy-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/gilroy-medium.woff2') format('woff2'),
+		 url('../fonts/Gilroy-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/Gilroy-Light.woff2') format('woff2'),
+		 url('../fonts/Gilroy-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+html {
+    box-sizing: border-box;
+    }
+    
+    *,
+    *::before,
+    *::after {
+    box-sizing: inherit; /*наследует значения родителя*/
+    }
+/*!------------------------КНОПКИ---------------------------*/
+.button {
+    display: inline-block;
+    padding: 9px 33px 9px 32px;
+    min-width: 117px;
+    border: 0; /*сбрасываем контур*/
+    text-align: center;
+    font-family: 'Gilroy', Arial, serif;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 58px;
+    color: #000000;
+    text-decoration: none;
+}
+.button-primary { /*button-yellow*/
+	background-color: #FBC832; /*normal на макете*/
+	background-position: 50% 50%;
+}
+/**срабатывает, когда пользователь наводит на элемент мышью, но не обязательно активирует его.*/
+.button-primary:hover { /*hover на макете*/
+	color: #000000;
+	box-shadow: 0px 2px 4px #CCCCCC; /*макет*/
+	background-image: radial-gradient(circle,#FFDF86 10%,transparent 10%); /*создала радиальный градиент с формой "круг" и прозрачностью в 20%*/
+	animation-name: button-primary-hover; /*имя анимации*/
+	animation-duration: 0.5s;
+	animation-iteration-count: 1; /*количество повторов ключевых кадров (1 по умолчанию, просто чтобы не забыть)*/
+	animation-fill-mode:forwards; /*Состояние элемента до и после воспроизведения анимации:в нашем случае к нему применились конечные свойства ключевых кадров (background-size: 500% 500%;)*/
+}
+@keyframes button-primary-hover {
+	from {
+		background-size: 0% 0%;
+	}
+	to {
+		background-size: 1000% 1000%;
+	}
+}
+
+/**соответствует элементу в момент, когда он активируется пользователем
+(время между нажатием и отпусканием пользователем кнопки мыши.)*/
+.button-primary:active { /*pressed на макете*/
+	color: #000000;
+	background-image: radial-gradient(circle,#FFBB0C 10%,transparent 10%); /*создала радиальный градиент с формой "круг" и прозрачностью в 20%*/
+    animation-name: button-primary-active; /*имя анимации*/
+	animation-duration: 0.5s;
+	animation-iteration-count: 1; /*количество повторов ключевых кадров (1 по умолчанию, просто чтобы не забыть)*/
+	animation-fill-mode:forwards; /*Состояние элемента до и после воспроизведения анимации:в нашем случае к нему применились конечные свойства ключевых кадров (background-size: 500% 500%;)*/
+}
+@keyframes button-primary-active {
+	from {
+		background-size: 0% 0%;
+	}
+	to {
+		background-size: 1000% 1000%;
+	}
+}
+/**применяется, когда элемент (такой как input формы) получает фокус.*/
+.button-primary:focus { /*avtive (Tab) на макете*/
+	outline: none;
+}
+.button-primary:focus-visible { /*avtive (Tab) на макете*/
+	border: 3px solid #6B6B6B;
+	color: #242424;
+}
+/**находит любой отключенный элемент. */
+.button-primary:disabled { /*disabled на макете*/
+	color: #6B6B6B;
+	background-color: #FFE28E;
+}
+
+.button-secondary { /*button-white*/
+	padding: 7px 32px 7px 31px;
+    border: 2px solid #FFC41E;
+    background-color:#F6F6F6;;
+	background-position: 50% 50%;
+
+}
+.button-secondary:hover {
+    border: 3px solid #FFBC00;
+    box-shadow: 0px 2px 4px #CCCCCC;
+    background-image: radial-gradient(circle,#FFFFFF 10%,transparent 10%); /*создала радиальный градиент с формой "круг" и прозрачностью в 20%*/
+    animation-name: button-secondary-hover; /*имя анимации*/
+	animation-duration: 0.5s;
+	animation-iteration-count: 1; /*количество повторов ключевых кадров (1 по умолчанию, просто чтобы не забыть)*/
+	animation-fill-mode:forwards; /*Состояние элемента до и после воспроизведения анимации:в нашем случае к нему применились конечные свойства ключевых кадров (background-size: 500% 500%;)*/
+}
+@keyframes button-secondary-hover {
+	from {
+		background-size: 0% 0%;
+	}
+	to {
+		background-size: 1000% 1000%;
+	}
+}
+.button-secondary:active {
+    color: #242424;
+    border: 3px solid #FFBC00;
+    background-image: radial-gradient(circle,rgba(255, 196, 30, 0.2) 10%,transparent 10%); /*создала радиальный градиент с формой "круг" и прозрачностью в 20%*/
+    animation-name: button-secondary-active; /*имя анимации*/
+	animation-duration: 0.5s;
+	animation-iteration-count: 1; /*количество повторов ключевых кадров (1 по умолчанию, просто чтобы не забыть)*/
+	animation-fill-mode:forwards; /*Состояние элемента до и после воспроизведения анимации:в нашем случае к нему применились конечные свойства ключевых кадров (background-size: 500% 500%;)*/
+}
+@keyframes button-secondary-active {
+	from {
+		background-size: 0% 0%;
+	}
+	to {
+		background-size: 1000% 1000%;
+	}
+}
+.button-secondary:focus {
+	outline: none;
+}
+.button-secondary:focus-visible {
+	border: 3px solid #6B6B6B;
+	color: #242424;
+}
+.button-secondary:disabled {
+	color: #6B6B6B;
+	background-color: #F6F6F6;
+	border: 2px solid #B3B3B3;
+}
+
+@media screen and (max-width: 639px) {
+	.button {
+	  font-size: 18px;
+	  padding: 5px 18px 5px 18px;
+	  min-width: 157px;
+	  display: block;
+  }
+	.button-secondary { /*button-white*/
+	  padding: 3px 13px 3px 13px;
+	}
+	.top-section__button {
+		width: 194px;
+	}
+	.animal-сard .button-primary {
+		width: 174px;
+	}
+	.animal-сard .button-secondary {
+	  width: 242px;
+  }
+  
+}
+.animal-сard__button {
+	display: block;
+	margin: 0 auto;
+	color: #242424;
+}
+.animal-сard__button.button-primary {
+	margin-bottom: 17px;
+}
+/*!-------------------------------------------------------*/
+body {
+	font-family: 'Gilroy', Arial, sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	color: #242424;
+	background-color:#F6F6F6;
+}
+.container {  
+	width: 100%;
+	max-width: 1146px; 
+	margin: 0 auto; 
+}
+.pets {
+	padding: 40px 0 16px 0;
+}
+.pets-top-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	text-align: center;
+}
+.top-content__link {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	font-size: 20px;
+	line-height: 20px;
+	color: #6B6B6B;
+}
+.top-content__link:hover {
+	color: #242424;
+}
+.top-content__link:active {
+	color: #6B6B6B;
+}
+.top-content__img {
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+}
+.top-content__title {
+	text-align: center;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 24px;
+	margin-bottom: 32px;
+}
+.dropdown__text {
+	color: #6B6B6B;
+	margin-right: 8px;
+}
+.dropdown__select {
+	font-family: 'Gilroy';
+	width: 168px;
+	padding: 9px 0 9px 16px;
+	background: #FFFFFF;
+	border: 1px solid #D6D6D6; 
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	box-sizing: border-box; 
+	background-image: url(../Pictures/icon/ChevronDown.svg);
+	background-repeat: no-repeat;
+	background-position: right 6px top 50%;
+	appearance: none; /*дефолтная стрелка убиоается*/
+}
+.animal-сard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 368px); /*то же, что и grid-template-columns: 1fr 1fr 1fr;*/
+    align-content: flex-start;
+    justify-content: center;
+    column-gap: 21px;
+    row-gap: 44px;
+    margin-bottom: 29px;
+}
+.сard-сontent {
+    max-width: 368px;
+    min-height: 695px;
+    padding: 14px;
+    padding-bottom: 18px;
+    border: 1px solid #D6D6D6;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.сard-сontent__image {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.animal-сard__foto {
+    max-width: 100%;
+    height: auto;
+}
+.сard-сontent__name {
+    text-align: center;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #D6D6D6;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+}
+.сard-сontent__info { /*ограничить количество символов*/
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6B6B6B;
+}
+.сard-сontent__description {
+    max-height: 95px;
+    overflow: hidden;
+    margin-bottom: 35px;
+    height: 95px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.footer {
+	padding-top: 40px;
+	padding-bottom: 16px;
+}
+.footer-menu {
+	display: flex;
+	width: 1146px;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.footer-menu__left {
+	display: flex;
+	justify-content: space-between;
+	width: 881px;
+}
+.footer-menu__right {
+	display: flex;
+	justify-content: space-between;
+	width: 143px;
+}
+.footer-menu li {
+	display: inline; /*превращаем в строчный-элемент.*/
+}
+/*-------------Ссылки меню в футере------------*/
+.footer-menu__left a {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	color: #474747;
+	text-decoration: none;
+	border-bottom: 1px solid #474747;
+}
+
+.footer-menu__right a {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	color: #242424;
+	text-decoration: none;
+	border-bottom: 1px solid #242424;
+}
+
+.footer-menu a:hover {
+	color: #AD7F00;
+	border-bottom: 1px solid #AD7F00;
+}
+.footer-menu a:active {
+	color: #474747;
+	border-bottom: 1px solid #474747;
+}
+.footer-menu a:focus {
+  color: #474747;
+  border-bottom: 1px solid #474747;
+  outline: 2px solid #6B6B6B;;
+}
+
+/*-----------------------------------------------------*/
+.footer__menu {
+	margin-bottom: 24px;
+}
+.copyright {
+	font-size: 12px;
+	line-height: 17px;
+	color: #B3B3B3;
+}
+.footer__copyright {
+	text-align: center;
+}
+@media screen and (max-width: 639px) {
+	body {
+		 font-size: 14px;
+		 line-height: 20px; 
+	}
+	.container {
+		 max-width: 300px; 
+	}
+	.pets {
+		padding: 24px 0 16px 0;
+	}
+	.top-content__title {
+		font-size: 20px;
+		margin-right: 67px;
+	  margin-bottom: 24px;
+  }
+  .top-content__link span {
+	  display: none;
+  }
+  .top-content__dropdown {
+	  margin: 0 auto;
+	  margin-bottom: 24px;
+  }
+  .animal-сard {
+	grid-template-columns: 1fr;
+	row-gap: 22px;
+	margin-bottom: 22px;
+	}
+	.сard-сontent {
+		max-width: 300px;
+		min-height: 613px;
+		padding: 16px 17px 20px;
+		background: #FFFFFF;
+	}
+	.сard-сontent__image {
+		margin-bottom: 12px;
+	}
+	.сard-сontent__name {
+	margin-bottom: 6px;
+	}
+	.сard-сontent__description {
+		max-height: 119px;
+	}
+	.home-section__link-more {
+		margin-bottom: 40px; 
+	}
+	.socs-container {
+		justify-content: center;
+	}
+	.home-section__socs {
+		padding-right: 0;
+	}
+	.socs-container__text {
+		max-width: 100%; /*583px от 751px(socs-container)*/
+		font-size: 14px;
+		line-height: 20px; 
+		margin-bottom: 6px; 
+	}
+  .footer {
+	padding-top: 24px;
+	}
+	.footer-menu {
+		width: 300px;
+		flex-wrap: nowrap;
+	}
+	.footer-menu__left {
+		flex-direction: column;
+		width: 228px;
+	}
+	.footer-menu__right {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+		width: 61px;
+	}
+	.footer-menu li:not(:last-of-type) {
+	margin-bottom: 20px;
+	}
+}
